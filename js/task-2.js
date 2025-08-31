@@ -28,9 +28,12 @@ const images = [
 const gallery = document.querySelector(".gallery");
 
 const res = images.map((element) => {
+  const li = document.createElement("li");
   const img = document.createElement("img");
+
   img.src = element.url;
   img.alt = element.alt;
-  return img;
+  li.append(img);
+  return li;
 });
 gallery.append(...res);
